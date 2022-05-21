@@ -21,7 +21,7 @@
 
        <md-field :class="errorClass">
         <label>Enter your Table Number!</label>
-        <md-input v-model="name2" required maxlength="3" v-on:keyup.enter="sendOrder()"></md-input>
+        <md-input v-model.number="table" required maxlength="3" v-on:keyup.enter="sendOrder()"></md-input>
         <span class="md-error">There is an error</span>
       </md-field>
     </div>
@@ -45,19 +45,27 @@
       return {
         showDialog: true,
         name: null,
+        table: null, 
         hasName: true,
         spinner: false
       }
     },
     created: function () {
         this.name = userService.getUser();
+        this.table = userService.getUser(); 
     },
     methods: {
       sendOrder() {
+        let count = 0; 
         this.hasName = !!this.name;
         if (this.hasName) {
+          count++; 
           this.spinner = true;
-          orderService.order(this.drink.id, this.name)
+          console.log("Bestellung: " + count); 
+          console.log("Drink ID: " + this.drink.id); 
+          console.log("Name: "+ this.name); 
+          console.log("TABLE NUMBER: " + this.table); 
+          orderService.order(this.drink.id, this.name, this.table)
             .then(() => userService.setUser(this.name))
             .then(() => this.close())
             .then(() => this.$router.push('/orders'));

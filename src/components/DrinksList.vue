@@ -37,7 +37,7 @@
       },
       closeModal() {
         this.showModal = false;
-        this.currentDrink = drink;
+        this.currentDrink = null;
       }
     },
     components: {

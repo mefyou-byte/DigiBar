@@ -57,6 +57,7 @@
             return {
               id: order.id,
               name: order.name,
+              table: order.table,
               beingRemoved: false,
               hasPermission: this.doesUserHavePermission(order),
               drink: drinkService.findById(order.drinkId)};}))
