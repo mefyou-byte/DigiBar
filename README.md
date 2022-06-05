@@ -10,15 +10,17 @@ npm version -> 6.14.13
 # install dependencies
 npm install
 
-
 # serve with hot reload at localhost:3000
-npm run start
+# cd frontend 
+# npm run server 
+# npm run start (open second terminal for that) 
 
-#run json server, open second terminal 
+
+# install json server
 npm i -g json-server 
-npm run server -> (node server.js) but in frontend!  
 
-# build for production with minification
+# npm run server -> (node server.js) 
+
 
 
 # build for production and view the bundle analyzer report
@@ -27,21 +29,4 @@ npm run server -> (node server.js) but in frontend!
 
 #Create Fake Rest API 
 https://medium.com/codingthesmartway-com-blog/create-a-rest-api-with-json-server-36da8680136d
-
-
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-
-# TODO
-
-
-# Links
-- [GitHub Pages](https://pages.github.com/)
-  - [User and Organisation Pages vs Project Pages](https://help.github.com/articles/user-organization-and-project-pages/)
-  - [Configuring a Publishing Source for GitHub Pages](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/)
-  - [Custom Domain](https://help.github.com/articles/quick-start-setting-up-a-custom-domain/)
-    - [Supported Custom Domains](https://help.github.com/articles/about-supported-custom-domains/)
-    - [Adding a Custom Domain for your GitHub Pages Site](https://help.github.com/articles/adding-or-removing-a-custom-domain-for-your-github-pages-site/)
-    - [Setting up a Custom Subdomain](https://help.github.com/articles/setting-up-a-custom-subdomain/)
-  
 
