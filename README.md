@@ -8,18 +8,16 @@ npm version -> 6.14.13
 ## Build Setup
 
 # install dependencies
-npm install
-
-# serve with hot reload at localhost:3000
-# cd frontend 
-# npm run server 
-# npm run start (open second terminal for that) 
-
 
 # install json server
 npm i -g json-server 
 
-# npm run server -> (node server.js) 
+# go in your Folder 
+   cd frontend 
+   npm install
+   npm run server 
+   npm run start (open second terminal) 
+
 
 
 
