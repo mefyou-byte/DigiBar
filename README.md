@@ -2,7 +2,12 @@
 
 node version -> v14.17.1
 npm version -> 6.14.13
-
+  "webpack": "^3.6.0",
+    "webpack-bundle-analyzer": "^2.9.0",
+    "webpack-dev-server": "^2.9.1",
+    "webpack-merge": "^4.1.0"
+    
+    
 ## Build Setup
 
 ``` bash
