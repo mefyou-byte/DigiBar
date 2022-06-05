@@ -13,17 +13,18 @@ npm version -> 6.14.13
 npm i -g json-server 
 
 # go in your Folder 
+  ```
    cd frontend 
    npm install
    npm run server 
    npm run start (open second terminal) 
 
-
+ ```
 
 
 # build for production and view the bundle analyzer report
 
-```
+
 
 #Create Fake Rest API 
 https://medium.com/codingthesmartway-com-blog/create-a-rest-api-with-json-server-36da8680136d
