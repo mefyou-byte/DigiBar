@@ -3,26 +3,26 @@
     {
         "id": 1,
         "name": "Beer",
-        "brand": "Apple",
+        "brand": "Düvel",
         "desc": "Simple, thirst quenching, traditional, manly.",
         "price":  2.99,
-        "image": "pintje.jpg"
+        "image": "https://res.cloudinary.com/digibar/image/upload/v1654441013/duvel_vj410q.jpg"
     },
     {
         "id": 2,
-        "name": "iPhone 12",
+        "name": "Mojito",
         "brand": "Apple",
-        "desc": "5.4-inch mini display",
-        "price": 699,
-        "image": "https://res.cloudinary.com/chaoocharles/image/upload/v1629289889/online-shop/iphone12_efhrcp.jpg"
+        "desc": "Mojito",
+        "price": 4.00,
+        "image": "https://res.cloudinary.com/digibar/image/upload/v1654440963/caipirinha_wfhqdh.jpg"
     },
     {
         "id": 3,
-        "name": "Galaxy S",
-        "brand": "Samsung",
-        "desc": "6.5-inch display",
-        "price": 399,
-        "image": "https://res.cloudinary.com/chaoocharles/image/upload/v1629289889/online-shop/galaxyS_dvjf5w.png"
+        "name": "White Wine",
+        "brand": "Wine",
+        "desc": "Wine",
+        "price": 2.50,
+        "image": "https://res.cloudinary.com/digibar/image/upload/v1654440963/white-wine_xof6h0.jpg"
     }
     ]
 }

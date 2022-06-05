@@ -1,16 +1,27 @@
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
 import {
   addToCart,
   clearCart,
   decreaseCart,
   getTotals,
   removeFromCart,
+  order, 
 } from "../slices/cartSlice";
 
 import { Link } from "react-router-dom";
 
+import { Modal } from 'react-responsive-modal';
+import 'react-responsive-modal/styles.css';
+
+
 const Cart = () => {
+  
+  const [open, setOpen] = useState(false);
+
+  const onOpenModal = () => setOpen(true);
+  const onCloseModal = () => setOpen(false);
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
@@ -30,6 +41,9 @@ const Cart = () => {
   const handleClearCart = () => {
     dispatch(clearCart());
   };
+  const checkout = () => {
+    dispatch(order()); 
+  }
   return (
     <div className="cart-container">
       <h2>Shopping Cart</h2>
@@ -101,8 +115,19 @@ const Cart = () => {
                 <span className="amount">${cart.cartTotalAmount}</span>
               </div>
               <p>Taxes and shipping calculated at checkout</p>
-              <button>Check out</button>
-              <div className="continue-shopping">
+              <button onClick={() => checkout()}>Order</button>
+              <button onClick={onOpenModal}>Open modal</button>
+                <Modal open={open} onClose={onCloseModal} center>
+                  <h2>Simple centered modal</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                    pulvinar risus non risus hendrerit venenatis. Pellentesque sit amet
+                    hendrerit risus, sed porttitor quam.
+                  </p>
+                  <button onClick={() => checkout()}>Order</button>
+                </Modal>
+            
+              <div className="continue-shopping" >
                 <Link to="/">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
