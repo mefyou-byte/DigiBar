@@ -1,0 +1,19 @@
+{
+  "name": "Poiters Housewarming",
+  "short_name: "Poiters",
+  "description": "Making ordering a drink way more difficult than it should be",
+  "start_url": "/index.html",
+  "scope: ".",
+  "background_color": "#EF9A9A",
+  "theme_color": "#00796B",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "dir: "ltr",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "static/home.svg",
+      "type": "image/svg"
+    }
+   ]
+  }
