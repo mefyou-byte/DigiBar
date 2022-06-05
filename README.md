@@ -18,6 +18,10 @@ npm i node-sass
 # serve with hot reload at localhost:8080
 npm run dev
 
+#run json server 
+npm i -g json-server 
+node server.js 
+
 # build for production with minification
 npm run build
 
