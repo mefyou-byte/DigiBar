@@ -1,7 +1,13 @@
 # Digi Bar
 
-> 
-
+node version -> v14.17.1
+npm version -> 6.14.13
+  "webpack": "^3.6.0",
+    "webpack-bundle-analyzer": "^2.9.0",
+    "webpack-dev-server": "^2.9.1",
+    "webpack-merge": "^4.1.0"
+    
+    
 ## Build Setup
 
 ``` bash
@@ -12,12 +18,22 @@ npm install
 # serve with hot reload at localhost:8080
 npm run dev
 
+#run json server 
+npm i -g json-server 
+node server.js 
+
 # build for production with minification
 npm run build
 
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
+
+#Create Fake Rest API 
+https://medium.com/codingthesmartway-com-blog/create-a-rest-api-with-json-server-36da8680136d
+
+json-server --watch db.json
+
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
