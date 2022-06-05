@@ -25,6 +25,12 @@ npm run build
 npm run build --report
 ```
 
+#Create Fake Rest API 
+https://medium.com/codingthesmartway-com-blog/create-a-rest-api-with-json-server-36da8680136d
+
+json-server --watch db.json
+
+
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 # TODO
