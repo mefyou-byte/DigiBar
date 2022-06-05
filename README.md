@@ -1,6 +1,7 @@
 # Digi Bar
 
-> 
+node version -> v14.17.1
+npm version -> 6.14.13
 
 ## Build Setup
 
@@ -22,12 +23,7 @@ npm run build --report
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 # TODO
-- [x] gitignore toevoegen
-- [x] vue cli project genereren
-- [x] manueel pushen naar github pages
-- [x] DNS koppelen von domain
-- [x] automatisch deploy bij push
-- [ ] online backend koppelen
+
 
 # Links
 - [GitHub Pages](https://pages.github.com/)
