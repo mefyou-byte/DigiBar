@@ -11,7 +11,7 @@ npm version -> 6.14.13
 npm install
 
 
-# serve with hot reload at localhost:8080
+# serve with hot reload at localhost:3000
 npm run start
 
 #run json server, open second terminal 
