@@ -1,6 +1,7 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import { Button, TextField } from "@material-ui/core";
 import {
   addToCart,
   clearCart,
@@ -46,7 +47,7 @@ const Cart = () => {
   }
   return (
     <div className="cart-container">
-      <h2>Shopping Cart</h2>
+      <h2>Bar Cart</h2>
       {cart.cartItems.length === 0 ? (
         <div className="cart-empty">
           <p>Your cart is currently empty</p>
@@ -91,7 +92,7 @@ const Cart = () => {
                       </button>
                     </div>
                   </div>
-                  <div className="cart-product-price">${cartItem.price}</div>
+                  <div className="cart-product-price">€{cartItem.price}</div>
                   <div className="cart-product-quantity">
                     <button onClick={() => handleDecreaseCart(cartItem)}>
                       -
@@ -100,7 +101,7 @@ const Cart = () => {
                     <button onClick={() => handleAddToCart(cartItem)}>+</button>
                   </div>
                   <div className="cart-product-total-price">
-                    ${cartItem.price * cartItem.cartQuantity}
+                    €{cartItem.price * cartItem.cartQuantity}
                   </div>
                 </div>
               ))}
@@ -112,19 +113,53 @@ const Cart = () => {
             <div className="cart-checkout">
               <div className="subtotal">
                 <span>Subtotal</span>
-                <span className="amount">${cart.cartTotalAmount}</span>
+                <span className="amount">€{cart.cartTotalAmount}</span>
               </div>
               <p>Taxes and shipping calculated at checkout</p>
               <button onClick={() => checkout()}>Order</button>
               <button onClick={onOpenModal}>Open modal</button>
                 <Modal open={open} onClose={onCloseModal} center>
-                  <h2>Simple centered modal</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                    pulvinar risus non risus hendrerit venenatis. Pellentesque sit amet
-                    hendrerit risus, sed porttitor quam.
-                  </p>
+                <h2>Finish your Order!</h2> 
+                <div className="cart-items">
+            {cart.cartItems &&
+              cart.cartItems.map((cartItem) => (
+                <div className="cart-item" key={cartItem.id}>
+                  <div className="cart-product">
+                    <img src={cartItem.image} alt={cartItem.name} />
+                    <div>
+                      <h3>{cartItem.name}</h3>
+                      <p>{cartItem.desc}</p>
+                      <button onClick={() => handleRemoveFromCart(cartItem)}>
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                  <div className="cart-product-price">€{cartItem.price}</div>
+                  <div className="cart-product-quantity">
+                    <button onClick={() => handleDecreaseCart(cartItem)}>
+                      -
+                    </button>
+                    <div className="count">{cartItem.cartQuantity}</div>
+                    <button onClick={() => handleAddToCart(cartItem)}>+</button>
+                  </div>
+                  <div className="cart-product-total-price">
+                    €{cartItem.price * cartItem.cartQuantity}
+                  </div>
+                </div>
+              ))}
+          </div>
+           <form >
+              <label>Table Number</label> <br/>
+              <TextField name="name"  fullWidth />
+              <br/> <br/>
+              <Button variant="contained" color="primary">Submit</Button> 
+            </form>
                   <button onClick={() => checkout()}>Order</button>
+
+                 <div className="subtotal2">
+                <span style={{marginRight: '0em', justifyContent: 'end', alignItems: 'center'}}>Subtotal</span>
+                <span className="amount">€{cart.cartTotalAmount}</span>
+              </div>
                 </Modal>
             
               <div className="continue-shopping" >

@@ -6,14 +6,15 @@ import { useGetAllProductsQuery } from "../slices/productsApi";
 const Home = () => {
   const { items: products, status } = useSelector((state) => state.products);
   const dispatch = useDispatch();
-  const history = useHistory();
+ const history = useHistory();
 
   const { data, error, isLoading } = useGetAllProductsQuery();
   console.log("Api", isLoading);
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
-    history.push("/cart");
+    window.location.reload(); 
+    history.push("/");
   };
 
   return (
@@ -29,7 +30,7 @@ const Home = () => {
                   <img src={product.image} alt={product.name} />
                   <div className="details">
                     <span>{product.desc}</span>
-                    <span className="price">${product.price}</span>
+                    <span className="price">€{product.price}</span>
                   </div>
                   <button onClick={() => handleAddToCart(product)}>
                     Add To Cart
