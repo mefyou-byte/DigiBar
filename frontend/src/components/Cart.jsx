@@ -116,8 +116,8 @@ const Cart = () => {
                 <span className="amount">€{cart.cartTotalAmount}</span>
               </div>
               <p>Taxes and shipping calculated at checkout</p>
-              <button onClick={() => checkout()}>Order</button>
-              <button onClick={onOpenModal}>Open modal</button>
+              {/* <button onClick={() => checkout()}>Order</button> */}
+              <button onClick={onOpenModal}>Order</button>
                 <Modal open={open} onClose={onCloseModal} center>
                 <h2>Finish your Order!</h2> 
                 <div className="cart-items">
@@ -149,17 +149,19 @@ const Cart = () => {
               ))}
           </div>
            <form >
+           
               <label>Table Number</label> <br/>
-              <TextField name="name"  fullWidth />
+              <TextField name="name"  id="tableorder" fullWidth />
               <br/> <br/>
-              <Button variant="contained" color="primary">Submit</Button> 
+         
+              <Button onClick={() => checkout()} variant="contained" color="primary">Submit</Button> 
             </form>
-                  <button onClick={() => checkout()}>Order</button>
+                {/*   <button onClick={() => checkout()}>Order</button>
 
                  <div className="subtotal2">
                 <span style={{marginRight: '0em', justifyContent: 'end', alignItems: 'center'}}>Subtotal</span>
                 <span className="amount">€{cart.cartTotalAmount}</span>
-              </div>
+              </div> */}
                 </Modal>
             
               <div className="continue-shopping" >

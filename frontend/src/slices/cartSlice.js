@@ -7,6 +7,7 @@ const initialState = {
     : [],
   cartTotalQuantity: 0,
   cartTotalAmount: 0,
+  table: 0, 
 };
 
 const cartSlice = createSlice({
@@ -98,10 +99,15 @@ const cartSlice = createSlice({
       state.cartTotalAmount = total;
     },
     order(state, action){
-  
-      let test = localStorage.getItem("cartItems", JSON.stringify(state.cartItems)); 
-      console.log(test); 
-      console.log("Uy"); 
+     
+    let tablenumber = document.getElementById('tableorder').value; 
+    state.cartItems[0].table = tablenumber; 
+    
+      
+    localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+    let test = localStorage.getItem("cartItems", JSON.stringify(state.cartItems)); 
+    console.log(test); 
+
     }, 
 
     clearCart(state, action) {
