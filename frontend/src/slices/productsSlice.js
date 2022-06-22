@@ -11,8 +11,24 @@ export const productsFetch = createAsyncThunk(
   async () => {
     try {
       const response = await axios.get(
-        "https://chaoo-online-shop.herokuapp.com/products"
+        "http://localhost:3001/ordered"
       );
+      console.log(response.data); 
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
+
+export const productsordered = createAsyncThunk(
+  "products/productsFetch",
+  async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:3001/ordered"
+      );
+   
       return response.data;
     } catch (error) {
       console.log(error);
@@ -38,4 +54,7 @@ const productsSlice = createSlice({
   },
 });
 
+
+export const { post } = productsordered; 
+export const { usetest } = productsFetch; 
 export default productsSlice.reducer;

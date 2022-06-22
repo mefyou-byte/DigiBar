@@ -1,10 +1,11 @@
 // Need to use the React-specific entry point to import createApi
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
+console.log("Entered ORDEREDAPI")
 // Define a service using a base URL and expected endpoints
 export const orderedApi = createApi({
   reducerPath: "orderedApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3001/" }),
   endpoints: (builder) => ({
     getAllProducts: builder.query({
       query: () => `ordered`,

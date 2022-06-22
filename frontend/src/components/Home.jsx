@@ -35,7 +35,7 @@ const Home = () => {
       {status === "success" ? (
         <>
           <h2>Order your drink!</h2>
-          <button onClick={onOpenModal}>Mix your drink</button>
+         {/*  <button onClick={onOpenModal}>Mix your drink</button>
           <Modal open={open} onClose={onCloseModal} center>
             <h2>Mix your Drink!</h2>
             <div className="mix-items">
@@ -66,8 +66,8 @@ const Home = () => {
                       €{cartItem.price * cartItem.cartQuantity}
                     </div>
                   </div>
-                ))}*/}
-            </div>
+                ))}
+            </div> 
             <form>
               <label>Table Number</label> <br />
               <TextField name="name" fullWidth />
@@ -88,10 +88,10 @@ const Home = () => {
               >
                 Subtotal
               </span>
-              {/*<span className="amount">€{cart.cartTotalAmount}</span>*/}
+              {/*<span className="amount">€{cart.cartTotalAmount}</span>
             </div>
           </Modal>
-
+        */}
 
 
           <div className="products">
