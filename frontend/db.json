@@ -119,7 +119,32 @@
       "desc": "Martini",
       "price": 4.5,
       "image": "https://res.cloudinary.com/jy3-gs-9s-ymxdn/image/upload/v1655641545/digibar/d0b1b441-1fac-4732-ab94-44eecb2ed7ec_q2gtqd.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Red Lady",
+      "brand": "Red Lady",
+      "desc": "Red Lady",
+      "price": 3.5,
+      "image": "https://res.cloudinary.com/jy3-gs-9s-ymxdn/image/upload/v1656001758/digibar/csm_red-lady-bowl-mobile_8dd93fe723_bfcgj3.jpg"
+    },
+    {
+      "id": 17,
+      "name": "Paloma",
+      "brand": "Paloma",
+      "desc": "Paloma",
+      "price": 5.0,
+      "image": "https://res.cloudinary.com/jy3-gs-9s-ymxdn/image/upload/v1656001822/digibar/Paloma_pc94bw.jpg"
+    },
+    {
+      "id": 18,
+      "name": "Maui Mule",
+      "brand": "Maui Mule",
+      "desc": "Maui Mule",
+      "price": 10.0,
+      "image": "https://res.cloudinary.com/jy3-gs-9s-ymxdn/image/upload/v1656001968/digibar/3025139_aagxmg.jpg"
     }
+
   ],
   "ordered": [
     {

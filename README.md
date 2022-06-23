@@ -10,7 +10,8 @@ npm version -> 6.14.13
 # install dependencies
 
 # install json server
-npm i -g json-server 
+npm i -g json-server  (backend)
+npm i react-paypal-button-v2 (Payment functions)
 
 # go in your Folder 
   ```
@@ -20,6 +21,8 @@ npm i -g json-server
    npm run start (open second terminal) 
 
  ```
+
+
 
 
 # build for production and view the bundle analyzer report

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { PayPalButton } from "react-paypal-button-v2";
 
 import { Button, TextField } from "@material-ui/core";
 import {
@@ -8,7 +9,7 @@ import {
   decreaseCart,
   getTotals,
   removeFromCart,
-  order, 
+  order,
 } from "../slices/cartSlice";
 
 
@@ -21,7 +22,7 @@ import 'react-responsive-modal/styles.css';
 
 
 const Cart = () => {
-  
+
   const [open, setOpen] = useState(false);
 
   const onOpenModal = () => setOpen(true);
@@ -46,9 +47,10 @@ const Cart = () => {
     dispatch(clearCart());
   };
   const checkout = () => {
-    dispatch(order()); 
+    dispatch(order());
   }
   return (
+
     <div className="cart-container">
       <h2>Bar Cart</h2>
       {cart.cartItems.length === 0 ? (
@@ -121,52 +123,67 @@ const Cart = () => {
               <p>Taxes and shipping calculated at checkout</p>
               {/* <button onClick={() => checkout()}>Order</button> */}
               <button onClick={onOpenModal}>Order</button>
-                <Modal open={open} onClose={onCloseModal} center>
-                <h2>Finish your Order!</h2> 
+              <Modal open={open} onClose={onCloseModal} center>
+                <h2>Finish your Order!</h2>
                 <div className="cart-items">
-            {cart.cartItems &&
-              cart.cartItems.map((cartItem) => (
-                <div className="cart-item" key={cartItem.id}>
-                  <div className="cart-product">
-                    <img src={cartItem.image} alt={cartItem.name} />
-                    <div>
-                      <h3>{cartItem.name}</h3>
-                      <p>{cartItem.desc}</p>
-                      <button onClick={() => handleRemoveFromCart(cartItem)}>
-                        Remove
-                      </button>
-                    </div>
-                  </div>
-                  <div className="cart-product-price">€{cartItem.price}</div>
-                  <div className="cart-product-quantity">
-                    <button onClick={() => handleDecreaseCart(cartItem)}>
-                      -
-                    </button>
-                    <div className="count">{cartItem.cartQuantity}</div>
-                    <button onClick={() => handleAddToCart(cartItem)}>+</button>
-                  </div>
-                  <div className="cart-product-total-price">
-                    €{cartItem.price * cartItem.cartQuantity}
-                  </div>
+                  {cart.cartItems &&
+                    cart.cartItems.map((cartItem) => (
+                      <div className="cart-item" key={cartItem.id}>
+                        <div className="cart-product">
+                          <img src={cartItem.image} alt={cartItem.name} />
+                          <div>
+                            <h3>{cartItem.name}</h3>
+                            <p>{cartItem.desc}</p>
+                            <button onClick={() => handleRemoveFromCart(cartItem)}>
+                              Remove
+                            </button>
+                          </div>
+                        </div>
+                        <div className="cart-product-price">€{cartItem.price}</div>
+                        <div className="cart-product-quantity">
+                          <button onClick={() => handleDecreaseCart(cartItem)}>
+                            -
+                          </button>
+                          <div className="count">{cartItem.cartQuantity}</div>
+                          <button onClick={() => handleAddToCart(cartItem)}>+</button>
+                        </div>
+                        <div className="cart-product-total-price">
+                          €{cartItem.price * cartItem.cartQuantity}
+                        </div>
+                      </div>
+                    ))}
                 </div>
-              ))}
-          </div>
-           <form >
-           
-              <label>Table Number</label> <br/>
-              <TextField name="name"  id="tableorder" fullWidth />
-              <br/> <br/>
-         
-              <Button onClick={() => checkout()} variant="contained" color="primary">Submit</Button> 
-            </form>
+                <form >
+                  <br></br>
+                  <br></br>
+                  <PayPalButton
+                    shippingPreference="NO_SHIPPING"
+                    amount="0.01"
+                    options={{
+                      clientId:
+                        "AVkMvey7sHge6cgNc6XQBX94w6r9YijRegcRGGFYwdaA42wczk3Ip4ovSKojkYo5i4vzmDOv6l1mPlDt"
+                    }}
+                    onSuccess={(details, data) => {
+                      console.log("Details---------->", details);
+                      console.log("Data------------->", data);
+                    }}
+                  />
+                  <br></br>
+                  <br></br>
+                  <label>Table Number</label> <br />
+                  <TextField name="name" id="tableorder" fullWidth />
+                  <br /> <br />
+
+                  <Button onClick={() => checkout()} variant="contained" color="primary">Submit</Button>
+                </form>
                 {/*   <button onClick={() => checkout()}>Order</button>
 
                  <div className="subtotal2">
                 <span style={{marginRight: '0em', justifyContent: 'end', alignItems: 'center'}}>Subtotal</span>
                 <span className="amount">€{cart.cartTotalAmount}</span>
               </div> */}
-                </Modal>
-            
+              </Modal>
+
               <div className="continue-shopping" >
                 <Link to="/">
                   <svg
