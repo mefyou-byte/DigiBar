@@ -116,13 +116,13 @@ const History = () => {
             <button className="clear-btn" onClick={() => handleClearCart()}>
               Clear Cart
             </button>
-            <div className="cart-checkout">
+            {/* <div className="cart-checkout">
               <div className="subtotal">
                 <span>Subtotal</span>
                 <span className="amount">€{cart.cartTotalAmount}</span>
               </div>
               <p>Taxes and shipping calculated at checkout</p>
-              {/* <button onClick={() => checkout()}>Order</button> */}
+              {/* <button onClick={() => checkout()}>Order</button> 
          
           
               <div className="continue-shopping" >
@@ -143,7 +143,7 @@ const History = () => {
                   <span>Continue Shopping</span>
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       )}
