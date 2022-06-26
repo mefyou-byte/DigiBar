@@ -22,6 +22,16 @@ const NavBar = () => {
          
         </div>
       </Link>
+
+      <Link to="/feedback">
+      <div className="nav-bag">
+        <h3>Feedback?</h3>
+        </div>
+      </Link>
+
+
+      
+      
       <Link to="/cart">
         <div className="nav-bag">
         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-bag-check-fill" viewBox="0 0 16 16">

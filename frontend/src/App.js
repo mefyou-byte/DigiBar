@@ -7,6 +7,8 @@ import NavBar from "./components/NavBar";
 import NotFound from "./components/NotFound";
 import Cart from "./components/Cart";
 import History from "./components/History";
+import Feedback from "./components/Feedback";
+
 import "react-toastify/dist/ReactToastify.css";
 
 import { keepTheme } from './themes';
@@ -22,7 +24,8 @@ function App() {
         <NavBar />
         <div className="content-container">
           <Switch>
-           <Route path="/history" component={History}/>
+            <Route path="/feedback" component={Feedback}></Route>
+            <Route path="/history" component={History}/>
             <Route path="/cart" component={Cart} />
             <Route path="/not-found" component={NotFound} />
             <Route path="/" exact component={Home} />
