@@ -8,8 +8,33 @@ import "react-responsive-modal/styles.css";
 import { useEffect, useState } from "react";
 import {order} from "../slices/cartSlice";
 import { Button, TextField } from "@material-ui/core";
-
+import { setTheme } from '../themes';
 const Home = () => {
+  const [togClass, setTogClass] = useState('dark');
+  let theme = localStorage.getItem('theme');
+
+  const handleOnClick = () => {
+      if (localStorage.getItem('theme') === 'theme-dark') {
+          setTheme('theme-light');
+          setTogClass('light')
+      } else {
+          setTheme('theme-dark');
+          setTogClass('dark')
+      }
+  }
+
+  useEffect(() => {
+      if (localStorage.getItem('theme') === 'theme-dark') {
+          setTogClass('dark')
+      } else if (localStorage.getItem('theme') === 'theme-light') {
+          setTogClass('light')
+      }
+  }, [theme])
+
+
+
+
+
   const { items: products, status } = useSelector((state) => state.products);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -17,24 +42,51 @@ const Home = () => {
   const [open, setOpen] = useState(false);
   const onOpenModal = () => setOpen(true);
   const onCloseModal = () => setOpen(false);
+ 
+ 
   const checkout = () => {
     dispatch(order());
   };
+ 
 
   const { data, error, isLoading } = useGetAllProductsQuery();
   console.log("Api", isLoading);
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
-    window.location.reload();
+    window.location.href="/"
     history.push("/");
+    /* window.location.reload(); */
+   
   };
+
+
 
   return (
     <div className="home-container">
       {status === "success" ? (
         <>
-          <h2>Order your drink!</h2>
+          <h2>Order your drink! 
+          <p> </p>
+          <label class="switch">
+            <input type="checkbox"  onClick={handleOnClick} unchecked />
+              <span class="slider round"></span>
+           
+            
+           </label>
+          </h2>
+     
+           
+           
+          
+         
+          <div className="container--toggle">
+         
+           
+         
+
+            
+        </div>
          {/*  <button onClick={onOpenModal}>Mix your drink</button>
           <Modal open={open} onClose={onCloseModal} center>
             <h2>Mix your Drink!</h2>

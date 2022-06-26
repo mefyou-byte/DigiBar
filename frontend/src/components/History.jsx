@@ -94,17 +94,17 @@ const History = () => {
                       <h3>{orderedItem.name}</h3>
                       <p>{orderedItem.desc}</p>
                       <button onClick={() => handleRemoveFromCart(orderedItem)}>
-                        Remove
+                        Remove Item 
                       </button>
                     </div>
                   </div>
                   <div className="cart-product-price">€{orderedItem.price}</div>
                   <div className="cart-product-quantity">
                     <button onClick={() => handleDecreaseCart(orderedItem)}>
-                      -
+                      
                     </button>
                     <div className="count">{orderedItem.cartQuantity}</div>
-                    <button onClick={() => handleAddToCart(orderedItem)}>+</button>
+                    <button onClick={() => handleAddToCart(orderedItem)}></button>
                   </div>
                   <div className="cart-product-total-price">
                     €{orderedItem.price * orderedItem.cartQuantity}
@@ -114,7 +114,7 @@ const History = () => {
           </div>
           <div className="cart-summary">
             <button className="clear-btn" onClick={() => handleClearCart()}>
-              Clear Cart
+              Cancel Order
             </button>
             {/* <div className="cart-checkout">
               <div className="subtotal">

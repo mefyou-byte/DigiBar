@@ -1,13 +1,18 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { setTheme } from '../themes';
+import { useEffect, useState } from "react";
+
 
 const NavBar = () => {
   const { cartTotalQuantity } = useSelector((state) => state.cart);
+
   return (
     <nav className="nav-bar">
       <Link to="/">
         <h2>DigiBar</h2>
       </Link>
+   
       <Link to="/history">
         <div className="nav-bag">
         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-compass" viewBox="0 0 16 16">
@@ -27,10 +32,6 @@ const NavBar = () => {
           </span>
         </div>
       </Link>
-
-
-
-
     </nav>
   );
 };

@@ -191,7 +191,7 @@ const cartSlice = createSlice({
     clearCartOrdered(state, action) {
       state.orderedItems = [];
       localStorage.setItem("orderedItems", JSON.stringify(state.orderedItems));
-      toast.error("Ordere cleared", { position: "bottom-left" });
+      toast.error("Order canceled", { position: "bottom-left" });
 
     },
 

@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-
+import React, {  useEffect } from 'react';
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import NotFound from "./components/NotFound";
@@ -9,9 +9,12 @@ import Cart from "./components/Cart";
 import History from "./components/History";
 import "react-toastify/dist/ReactToastify.css";
 
-
+import { keepTheme } from './themes';
 
 function App() {
+  useEffect(() => {
+    keepTheme();
+})
   return (
     <div className="App">
       <BrowserRouter>
