@@ -26,6 +26,15 @@
     width: 0;
     height: 0;
   }
+  .rating {
+    justify-content: center; 
+  }
+  .react-simple-star-rating{
+    margin-left: 80px; 
+  }
+  .button{
+    margin-left: 90px; 
+  }
   
   .slider {
     position: absolute;
@@ -427,10 +436,12 @@ body {
 }
 
 .theme-dark {
-    --dark-text: white; 
-    --light-text: #F9F8F8;  
-    --dark-background: #1a1919;
-    --light-background: #586F7C;
+    --dark-text: #5E4B56;
+    --light-text: #5E4B56;
+    --dark-background: white;
+    --light-background: #EDDCD2;
+    --accent: #DBE7E4;
+    --button-border: #5E4B56;
     
 
   }

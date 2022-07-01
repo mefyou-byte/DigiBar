@@ -56,7 +56,7 @@ const History = () => {
       <h2>Ordered Cart</h2>
       {cart.orderedItems.length === 0 ? (
         <div className="cart-empty">
-          <p>Your cart is currently empty</p>
+          <p>There is currently no ordered drink for you!</p>
           <div className="start-shopping">
             <Link to="/">
               <svg
@@ -72,7 +72,7 @@ const History = () => {
                   d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
                 />
               </svg>
-              <span>Start Order</span>
+              <span>Start drinking!</span>
             </Link>
           </div>
         </div>

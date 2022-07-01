@@ -67,13 +67,12 @@ const Home = () => {
       {status === "success" ? (
         <>
           <h2>Order your drink! 
-          <p> </p>
+        {/*   <p> </p>
           <label class="switch">
             <input type="checkbox"  onClick={handleOnClick} unchecked />
               <span class="slider round"></span>
-           
-            
-           </label>
+             
+           </label> */}
           </h2>
      
            
